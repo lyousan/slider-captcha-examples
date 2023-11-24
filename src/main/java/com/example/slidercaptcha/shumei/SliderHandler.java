@@ -45,9 +45,9 @@ public class SliderHandler extends AbstractSliderHandler {
         // 两种识别方式 new-marked.png old-marked.png，根据实际情况选择，效果其实差不多
         Point point = discernPosition(bgFile, slideFile);
         Point point1 = oldDiscernPosition(bgFile, slideFile, "old-marked.png");
-        log.debug("识别点 ==> {}", point);
+        log.debug("识别点 ==> {}", point1);
         // 缩放比例 0.5
-        List<Integer> xlist = calcDistance((int) (point.x * 0.5), 0.2, 20);
+        List<Integer> xlist = calcDistance((int) (point1.x * 0.5), 0.2, 20);
         List<Integer> ylist = calcDistance(10, 0.1, 0);
         Mouse mouse = page.mouse();
         BoundingBox boundingBox = page.locator(".shumei_captcha_loaded_img_fg").boundingBox();
